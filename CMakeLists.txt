@@ -8,7 +8,6 @@ include(${CGAL_USE_FILE})
 
 add_executable(Learn_CGAL main.cpp)
 target_link_libraries(Learn_CGAL ${CGAL_LIBRARIES} m)
-add_executable(Test AABB_tree/Test.cpp)
 
 # 尝试使用cmake自动加入，发现似乎不太行，改为使用C/C++ Single File Execution插件
 # 创建一个列表来存储可执行文件的名称
@@ -37,3 +36,5 @@ add_executable(Test AABB_tree/Test.cpp)
 #    # 使用 target_link_libraries 将当前可执行文件链接到 CGAL 库
 #    target_link_libraries(${executable_name} INTERFACE ${CGAL_LIBRARIES} m)
 #endforeach()
+
+add_executable(basic_001 basic/basic_001.cpp)
