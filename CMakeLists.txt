@@ -38,3 +38,7 @@ target_link_libraries(Learn_CGAL ${CGAL_LIBRARIES} m)
 #endforeach()
 
 add_executable(basic_001 basic/basic_001.cpp)
+add_executable(basic_002 basic/basic_002.cpp)
+add_executable(basic_003 basic/basic_003.cpp)
+add_executable(basic_004 basic/basic_004.cpp)
+add_executable(basic_005 basic/basic_005.cpp)
