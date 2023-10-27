@@ -82,13 +82,14 @@ public:
     QuadTreeNode *mChildren[4];
     std::vector<TriangleShape> mContent;
     Rect mArea;
-
+    // 暂时的构造函数，仅允许内部使用
     QuadTreeNode() {
         for (int i = 0; i < 4; i++) {
             mChildren[i] = nullptr;
         }
     }
 
+public:
     QuadTreeNode(Rect area) : mArea(area) {
         for (int i = 0; i < 4; i++) {
             mChildren[i] = nullptr;
@@ -183,6 +184,7 @@ public:
         }
     }
 
+    // triangle属于Rect的那个位置
     int getIndex(TriangleShape shape) {
         int i1 = getIndex(shape.pA());
         int i2 = getIndex(shape.pB());
@@ -196,6 +198,7 @@ public:
         return i1;
     }
 
+    // point属于Rect的哪个位置
     int getIndex(Point point) {
         if (!mArea.Contains(point)) {
             return -1;
@@ -248,6 +251,7 @@ public:
             return nullptr;
         }
         // 如果有子节点，继续查找
+        // 这里先简化一下，其实应该根据triangle的位置进行索引
         if (mChildren != nullptr) {
             for (int i = 0; i < 4; i++) {
                 if (mChildren[i] != nullptr) {
